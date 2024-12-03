@@ -59,5 +59,7 @@ class WasherApi(ApplianceApi):
             washer_entities.extend([GeErdPropertySensor(self, ErdCode.LAUNDRY_WASHER_SMART_DISPENSE, "loads_left", uom_override="loads")])
         if self.has_erd_code(ErdCode.LAUNDRY_WASHER_SMART_DISPENSE_TANK_STATUS):
             washer_entities.extend([GeErdSensor(self, ErdCode.LAUNDRY_WASHER_SMART_DISPENSE_TANK_STATUS)])
-
+        if self.has_erd_code(ErdCode.LAUNDRY_WASHER_SPIN_SPEED):
+            washer_entities.extend([GeErdPropertySensor(self, ErdCode.LAUNDRY_WASHER_SPIN_SPEED, icon_override="mdi:refresh")])
+            
         return washer_entities
